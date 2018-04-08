@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B11BA7F2077C44400B26507 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B11BA7E2077C44400B26507 /* SettingsViewController.swift */; };
+		4B11BA812077EC5200B26507 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4B11BA802077EC5200B26507 /* GoogleService-Info.plist */; };
 		4B12C8F520752C94002D52FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B12C8F420752C94002D52FB /* AppDelegate.swift */; };
 		4B12C8F720752C94002D52FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B12C8F620752C94002D52FB /* ViewController.swift */; };
 		4B12C8FA20752C94002D52FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B12C8F820752C94002D52FB /* Main.storyboard */; };
@@ -15,6 +17,17 @@
 		4B12C90220752C96002D52FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B12C90020752C96002D52FB /* LaunchScreen.storyboard */; };
 		4B12C90D20752C96002D52FB /* TechFestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B12C90C20752C96002D52FB /* TechFestAppTests.swift */; };
 		4B12C91820752C96002D52FB /* TechFestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B12C91720752C96002D52FB /* TechFestAppUITests.swift */; };
+		4B2F54822075524C008043AB /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F54812075524C008043AB /* Graph.swift */; };
+		4B7DD6B9207915C000E6FB96 /* MainLogicClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DD6B8207915C000E6FB96 /* MainLogicClass.swift */; };
+		4BAFB51E207A7DDD0054E09A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAFB51D207A7DDD0054E09A /* AboutViewController.swift */; };
+		4BE7330B207895880050470A /* LivingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7330A207895880050470A /* LivingRoomViewController.swift */; };
+		4BE7330D207895E70050470A /* DrawingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7330C207895E60050470A /* DrawingRoomViewController.swift */; };
+		4BE7330F207895F80050470A /* KitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7330E207895F80050470A /* KitchenViewController.swift */; };
+		4BE73311207896130050470A /* WashroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE73310207896130050470A /* WashroomViewController.swift */; };
+		4BE733132078AD500050470A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE733122078AD500050470A /* Storage.swift */; };
+		4C43F419CEBFCB6ADC69F1CC /* Pods_TechFestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FDDBB8C4594EA494E24E7E /* Pods_TechFestApp.framework */; };
+		A461CC2D59DC88FE776F986E /* Pods_TechFestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E17A99F71CCFFA36DAB4EBA /* Pods_TechFestAppTests.framework */; };
+		A4D5D303FB38F5CF889E01BA /* Pods_TechFestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31C8588ECC4F344ABCBAC117 /* Pods_TechFestAppUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2AD73CDDDE7786E5B3FD79C4 /* Pods-TechFestAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechFestAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TechFestAppUITests/Pods-TechFestAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		31C8588ECC4F344ABCBAC117 /* Pods_TechFestAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TechFestAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B11BA7E2077C44400B26507 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4B11BA802077EC5200B26507 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4B12C8F120752C94002D52FB /* TechFestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TechFestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B12C8F420752C94002D52FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4B12C8F620752C94002D52FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +66,21 @@
 		4B12C91320752C96002D52FB /* TechFestAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TechFestAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B12C91720752C96002D52FB /* TechFestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechFestAppUITests.swift; sourceTree = "<group>"; };
 		4B12C91920752C96002D52FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4B2F54812075524C008043AB /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		4B7DD6B8207915C000E6FB96 /* MainLogicClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogicClass.swift; sourceTree = "<group>"; };
+		4BAFB51D207A7DDD0054E09A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		4BE7330A207895880050470A /* LivingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingRoomViewController.swift; sourceTree = "<group>"; };
+		4BE7330C207895E60050470A /* DrawingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingRoomViewController.swift; sourceTree = "<group>"; };
+		4BE7330E207895F80050470A /* KitchenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenViewController.swift; sourceTree = "<group>"; };
+		4BE73310207896130050470A /* WashroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashroomViewController.swift; sourceTree = "<group>"; };
+		4BE733122078AD500050470A /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		50914B60EF2ED17FF0E1699C /* Pods-TechFestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechFestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TechFestApp/Pods-TechFestApp.release.xcconfig"; sourceTree = "<group>"; };
+		5E17A99F71CCFFA36DAB4EBA /* Pods_TechFestAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TechFestAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77EDA5539E426D0DBCC3FCB7 /* Pods-TechFestAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechFestAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TechFestAppUITests/Pods-TechFestAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7CADFA99D0004AB74FFF6271 /* Pods-TechFestAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechFestAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TechFestAppTests/Pods-TechFestAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7EE114240EC9C207D706E719 /* Pods-TechFestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechFestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TechFestApp/Pods-TechFestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		99FDDBB8C4594EA494E24E7E /* Pods_TechFestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TechFestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2CE3C10C4C1FC976B77B9CF /* Pods-TechFestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TechFestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TechFestAppTests/Pods-TechFestAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C43F419CEBFCB6ADC69F1CC /* Pods_TechFestApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A461CC2D59DC88FE776F986E /* Pods_TechFestAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D5D303FB38F5CF889E01BA /* Pods_TechFestAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +118,8 @@
 				4B12C90B20752C96002D52FB /* TechFestAppTests */,
 				4B12C91620752C96002D52FB /* TechFestAppUITests */,
 				4B12C8F220752C94002D52FB /* Products */,
+				64708847D80FC5704D33698E /* Pods */,
+				A24A11C300E8A1CCEE99B9B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +138,20 @@
 			children = (
 				4B12C8F420752C94002D52FB /* AppDelegate.swift */,
 				4B12C8F620752C94002D52FB /* ViewController.swift */,
+				4BE73310207896130050470A /* WashroomViewController.swift */,
+				4B11BA7E2077C44400B26507 /* SettingsViewController.swift */,
+				4BE7330A207895880050470A /* LivingRoomViewController.swift */,
+				4BE7330C207895E60050470A /* DrawingRoomViewController.swift */,
+				4BE7330E207895F80050470A /* KitchenViewController.swift */,
+				4BAFB51D207A7DDD0054E09A /* AboutViewController.swift */,
+				4BE733122078AD500050470A /* Storage.swift */,
+				4B7DD6B8207915C000E6FB96 /* MainLogicClass.swift */,
+				4B2F54812075524C008043AB /* Graph.swift */,
 				4B12C8F820752C94002D52FB /* Main.storyboard */,
 				4B12C8FE20752C96002D52FB /* Assets.xcassets */,
 				4B12C90020752C96002D52FB /* LaunchScreen.storyboard */,
 				4B12C90320752C96002D52FB /* Info.plist */,
+				4B11BA802077EC5200B26507 /* GoogleService-Info.plist */,
 				4B12C8FB20752C94002D52FB /* TechFestApp.xcdatamodeld */,
 			);
 			path = TechFestApp;
@@ -128,6 +175,29 @@
 			path = TechFestAppUITests;
 			sourceTree = "<group>";
 		};
+		64708847D80FC5704D33698E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EE114240EC9C207D706E719 /* Pods-TechFestApp.debug.xcconfig */,
+				50914B60EF2ED17FF0E1699C /* Pods-TechFestApp.release.xcconfig */,
+				7CADFA99D0004AB74FFF6271 /* Pods-TechFestAppTests.debug.xcconfig */,
+				E2CE3C10C4C1FC976B77B9CF /* Pods-TechFestAppTests.release.xcconfig */,
+				77EDA5539E426D0DBCC3FCB7 /* Pods-TechFestAppUITests.debug.xcconfig */,
+				2AD73CDDDE7786E5B3FD79C4 /* Pods-TechFestAppUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A24A11C300E8A1CCEE99B9B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99FDDBB8C4594EA494E24E7E /* Pods_TechFestApp.framework */,
+				5E17A99F71CCFFA36DAB4EBA /* Pods_TechFestAppTests.framework */,
+				31C8588ECC4F344ABCBAC117 /* Pods_TechFestAppUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B12C91C20752C96002D52FB /* Build configuration list for PBXNativeTarget "TechFestApp" */;
 			buildPhases = (
+				3C573BCD4096C0128489FBCE /* [CP] Check Pods Manifest.lock */,
 				4B12C8ED20752C94002D52FB /* Sources */,
 				4B12C8EE20752C94002D52FB /* Frameworks */,
 				4B12C8EF20752C94002D52FB /* Resources */,
+				FED862F2F015A3C701EA6A7A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B12C91F20752C96002D52FB /* Build configuration list for PBXNativeTarget "TechFestAppTests" */;
 			buildPhases = (
+				DC90A6634EE506FA0A6616BC /* [CP] Check Pods Manifest.lock */,
 				4B12C90420752C96002D52FB /* Sources */,
 				4B12C90520752C96002D52FB /* Frameworks */,
 				4B12C90620752C96002D52FB /* Resources */,
@@ -170,6 +243,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B12C92220752C96002D52FB /* Build configuration list for PBXNativeTarget "TechFestAppUITests" */;
 			buildPhases = (
+				C8389C8FEEAD6C702920657C /* [CP] Check Pods Manifest.lock */,
 				4B12C90F20752C96002D52FB /* Sources */,
 				4B12C91020752C96002D52FB /* Frameworks */,
 				4B12C91120752C96002D52FB /* Resources */,
@@ -196,6 +270,11 @@
 				TargetAttributes = {
 					4B12C8F020752C94002D52FB = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					4B12C90720752C96002D52FB = {
 						CreatedOnToolsVersion = 9.3;
@@ -233,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B12C90220752C96002D52FB /* LaunchScreen.storyboard in Resources */,
+				4B11BA812077EC5200B26507 /* GoogleService-Info.plist in Resources */,
 				4B12C8FF20752C96002D52FB /* Assets.xcassets in Resources */,
 				4B12C8FA20752C94002D52FB /* Main.storyboard in Resources */,
 			);
@@ -254,14 +334,102 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3C573BCD4096C0128489FBCE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TechFestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8389C8FEEAD6C702920657C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TechFestAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC90A6634EE506FA0A6616BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TechFestAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FED862F2F015A3C701EA6A7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TechFestApp/Pods-TechFestApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TechFestApp/Pods-TechFestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4B12C8ED20752C94002D52FB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BE7330D207895E70050470A /* DrawingRoomViewController.swift in Sources */,
+				4B2F54822075524C008043AB /* Graph.swift in Sources */,
 				4B12C8F720752C94002D52FB /* ViewController.swift in Sources */,
+				4BAFB51E207A7DDD0054E09A /* AboutViewController.swift in Sources */,
+				4BE73311207896130050470A /* WashroomViewController.swift in Sources */,
+				4B7DD6B9207915C000E6FB96 /* MainLogicClass.swift in Sources */,
+				4BE7330F207895F80050470A /* KitchenViewController.swift in Sources */,
+				4BE7330B207895880050470A /* LivingRoomViewController.swift in Sources */,
 				4B12C8F520752C94002D52FB /* AppDelegate.swift in Sources */,
+				4B11BA7F2077C44400B26507 /* SettingsViewController.swift in Sources */,
 				4B12C8FD20752C94002D52FB /* TechFestApp.xcdatamodeld in Sources */,
+				4BE733132078AD500050470A /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +600,7 @@
 		};
 		4B12C91D20752C96002D52FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EE114240EC9C207D706E719 /* Pods-TechFestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -450,6 +619,7 @@
 		};
 		4B12C91E20752C96002D52FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50914B60EF2ED17FF0E1699C /* Pods-TechFestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +638,7 @@
 		};
 		4B12C92020752C96002D52FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CADFA99D0004AB74FFF6271 /* Pods-TechFestAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -489,6 +660,7 @@
 		};
 		4B12C92120752C96002D52FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2CE3C10C4C1FC976B77B9CF /* Pods-TechFestAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +682,7 @@
 		};
 		4B12C92320752C96002D52FB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77EDA5539E426D0DBCC3FCB7 /* Pods-TechFestAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +703,7 @@
 		};
 		4B12C92420752C96002D52FB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2AD73CDDDE7786E5B3FD79C4 /* Pods-TechFestAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
