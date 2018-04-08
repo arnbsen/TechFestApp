@@ -191,7 +191,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="QVV-3D-60P">
-                                <rect key="frame" x="17" y="86" width="285.5" height="231.5"/>
+                                <rect key="frame" x="17" y="86" width="285.5" height="283.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="Xti-t6-N36">
                                         <rect key="frame" x="0.0" y="0.0" width="285.5" height="24"/>
@@ -256,11 +256,11 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="KPh-Ni-ube">
-                                        <rect key="frame" x="0.0" y="142" width="285.5" height="89.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="KPh-Ni-ube">
+                                        <rect key="frame" x="0.0" y="142" width="285.5" height="141.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Project Idea Copyright © 2018  By" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hng-NG-zGS">
-                                                <rect key="frame" x="0.0" y="0.0" width="285.5" height="20"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="285.5" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -275,7 +275,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shreya Sil, Kasturi Saha" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yio-Mr-ACG">
-                                                <rect key="frame" x="0.0" y="37" width="285.5" height="17"/>
+                                                <rect key="frame" x="0.0" y="39" width="285.5" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="igt-WK-eEM"/>
                                                 </constraints>
@@ -284,7 +284,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debapriya Pal, Arnab Sen" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyb-Dk-3a7">
-                                                <rect key="frame" x="0.0" y="54" width="285.5" height="17"/>
+                                                <rect key="frame" x="0.0" y="58" width="285.5" height="17"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="17" id="WEX-cB-Vud"/>
                                                 </constraints>
@@ -292,19 +292,28 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swift Copyright © 2018 Apple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXP-bc-qhm">
+                                                <rect key="frame" x="0.0" y="77" width="285.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firebase Copyright © 2018 Google" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmz-G7-Pb5">
+                                                <rect key="frame" x="0.0" y="97" width="285.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Design Copyright © 2018 Arnab Sen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imf-Ev-asr">
-                                                <rect key="frame" x="0.0" y="71" width="285.5" height="18.5"/>
+                                                <rect key="frame" x="0.0" y="117" width="285.5" height="24.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="yyb-Dk-3a7" firstAttribute="top" secondItem="Yio-Mr-ACG" secondAttribute="bottom" id="Ehd-Ud-mtR"/>
                                             <constraint firstItem="P9q-JP-D5X" firstAttribute="top" secondItem="KPh-Ni-ube" secondAttribute="top" constant="20" symbolic="YES" id="MoD-ba-rLc"/>
                                             <constraint firstItem="hng-NG-zGS" firstAttribute="top" secondItem="KPh-Ni-ube" secondAttribute="top" id="Qp2-Xp-iyJ"/>
-                                            <constraint firstItem="P9q-JP-D5X" firstAttribute="top" secondItem="hng-NG-zGS" secondAttribute="bottom" id="S8i-KD-r3e"/>
-                                            <constraint firstItem="Yio-Mr-ACG" firstAttribute="top" secondItem="P9q-JP-D5X" secondAttribute="bottom" id="b31-JX-zOR"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -323,7 +332,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QVV-3D-60P" secondAttribute="bottom" constant="242.5" id="6Jt-BX-TC5"/>
+                            <constraint firstAttribute="bottom" secondItem="QVV-3D-60P" secondAttribute="bottom" constant="198.5" id="6Jt-BX-TC5"/>
                             <constraint firstItem="tGH-ib-lFf" firstAttribute="leading" secondItem="tTH-BJ-n2q" secondAttribute="leading" id="7hK-zX-zz5"/>
                             <constraint firstItem="QVV-3D-60P" firstAttribute="centerX" secondItem="tTH-BJ-n2q" secondAttribute="centerX" id="AyT-Wg-9cD"/>
                             <constraint firstItem="QVV-3D-60P" firstAttribute="centerX" secondItem="tGH-ib-lFf" secondAttribute="centerX" id="OQb-Xr-G8k"/>
