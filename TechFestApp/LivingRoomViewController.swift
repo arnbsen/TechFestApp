@@ -11,6 +11,8 @@ import Foundation
 
 class LivingRoomViewController : UIViewController{
     
+    var didAnyoneChange : Bool = false
+    
     @IBOutlet weak var activeLabel: UILabel!
     @IBOutlet weak var ACSwitch: UISwitch!
     @IBOutlet weak var livingRoomActivity: Graph!
@@ -24,47 +26,52 @@ class LivingRoomViewController : UIViewController{
     }
     
     @IBAction func openMainPage(_ sender: UIBarButtonItem) {
-        if MainLogicClass.Settings["Rooms"]!["living"]! {
-            Storage.setBoolValues(of: "LivingRoomACBool", with: ACSwitch.isOn, completion: {})
-            Storage.setBoolValues(of: "LivingRoomFan", with: fanSwitch.isOn, completion: {})
-            Storage.setBoolValues(of: "LivingRoomLight", with: lightsSwitch.isOn, completion: {})
-            Storage.setSliderValues(of: "LivingRoomAC", with: ACSlider.value, completion: {})
-            self.performSegue(withIdentifier: "LivingRoomPageMain", sender:self)
-        }else{
-            MainLogicClass.refreshSettings()
-            let alert : UIAlertController = UIAlertController(title: "Control is Disabled", message: "Room has been disabled in Global Settings\nSettings set here will not be permanet", preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "Go to Settings", style: .default, handler: {(UIAlertAction) in
+        if didAnyoneChange{
+            if MainLogicClass.Settings["Rooms"]!["living"]! {
+                Storage.setBoolValues(of: "LivingRoomACBool", with: ACSwitch.isOn, completion: {})
+                Storage.setBoolValues(of: "LivingRoomFan", with: fanSwitch.isOn, completion: {})
+                Storage.setBoolValues(of: "LivingRoomLight", with: lightsSwitch.isOn, completion: {})
+                Storage.setSliderValues(of: "LivingRoomAC", with: ACSlider.value, completion: {})
+                self.performSegue(withIdentifier: "LivingRoomPageMain", sender:self)
+            }else{
                 MainLogicClass.refreshSettings()
-                self.performSegue(withIdentifier: "LivingtoSettings", sender:self)
+                let alert : UIAlertController = UIAlertController(title: "Control is Disabled", message: "Room has been disabled in Global Settings\nSettings set here will not be permanent", preferredStyle: .actionSheet)
+                alert.addAction(UIAlertAction(title: "Go to Settings", style: .default, handler: {(UIAlertAction) in
+                    MainLogicClass.refreshSettings()
+                    self.performSegue(withIdentifier: "LivingtoSettings", sender:self)
                 
-            }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {(UIAlertAction) in
-                self.ACSwitch.setOn(MainLogicClass.LivingRoom["ACState"] as! Bool , animated: true)
-                self.lightsSwitch.setOn(MainLogicClass.LivingRoom["Lights"] as! Bool, animated: true)
-                self.fanSwitch.setOn(MainLogicClass.LivingRoom["Fans"] as! Bool, animated: true)
-                self.ACSlider.setValue(MainLogicClass.LivingRoom["ACVal"] as! Float, animated: true)
-                self.ACVal.text = String(Int(self.ACSlider.value))
-            }))
-            self.present(alert, animated: true, completion: {
-                
-            })
-        }
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {(UIAlertAction) in
+                    self.ACSwitch.setOn(MainLogicClass.LivingRoom["ACState"] as! Bool , animated: true)
+                    self.lightsSwitch.setOn(MainLogicClass.LivingRoom["Lights"] as! Bool, animated: true)
+                    self.fanSwitch.setOn(MainLogicClass.LivingRoom["Fans"] as! Bool, animated: true)
+                    self.ACSlider.setValue(MainLogicClass.LivingRoom["ACVal"] as! Float, animated: true)
+                    self.ACVal.text = String(Int(self.ACSlider.value))
+                    self.didAnyoneChange = false
+                }))
+                    self.present(alert, animated: true, completion: {})
+            }
+            }else{
+                self.performSegue(withIdentifier: "LivingRoomPageMain", sender:self)
+            }
     }
    
     @IBAction func ACSwitchToggle(_ sender: UISwitch) {
          ACSwitch.setOn(!ACSwitch.isOn, animated: true)
+         didAnyoneChange = true
     }
     @IBAction func ACSliderAction(_ sender: UISlider) {
          ACVal.text = String(Int(ACSlider.value))
-        
+         didAnyoneChange = true
     }
     @IBAction func lightSwitchToggle(_ sender: UISwitch) {
         lightsSwitch.setOn(!lightsSwitch.isOn, animated: true)
-        
+        didAnyoneChange = true
     }
     
     @IBAction func fanSwitchToogle(_ sender: Any) {
         fanSwitch.setOn(!fanSwitch.isOn, animated: true)
+        didAnyoneChange = true
     }
     
     override func viewDidLoad() {
@@ -75,9 +82,9 @@ class LivingRoomViewController : UIViewController{
         MainLogicClass.refreshLivingRoom()
         if MainLogicClass.Settings["Rooms"]!["living"]! {
             activeLabel.text = "Active"
-            activeLabel.textColor = #colorLiteral(red: 0, green: 0.9796395898, blue: 0.4746940136, alpha: 1)
+            activeLabel.textColor = #colorLiteral(red: 0, green: 0.7603741818, blue: 0.4746940136, alpha: 1)
         }else{
-            activeLabel.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            activeLabel.textColor = #colorLiteral(red: 0.8352941176, green: 0.2078431373, blue: 0, alpha: 1)
             activeLabel.text = "Inactive"
         }
         
@@ -88,9 +95,9 @@ class LivingRoomViewController : UIViewController{
         self.livingRoomActivity.refresh(with: MainLogicClass.refreshBufferLiving)
         if MainLogicClass.Settings["Rooms"]!["living"]! {
             activeLabel.text = "Active"
-            activeLabel.textColor = #colorLiteral(red: 0, green: 0.9796395898, blue: 0.4746940136, alpha: 1)
+            activeLabel.textColor = #colorLiteral(red: 0, green: 0.7603741818, blue: 0.4746940136, alpha: 1)
         }else{
-            activeLabel.textColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            activeLabel.textColor = #colorLiteral(red: 0.8352941176, green: 0.2078431373, blue: 0, alpha: 1)
             activeLabel.text = "Inactive"
         }
         ACSwitch.setOn(MainLogicClass.LivingRoom["ACState"] as! Bool , animated: true)

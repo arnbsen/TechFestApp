@@ -16,18 +16,17 @@ class MainLogicClass{
     //Storing Refresh Buffer Variables for Each View
     static var refreshBufferMain : [CGPoint] = []
     static var refreshBufferKitchen : [CGPoint] = []
-    static var refreshBufferDrawing : [CGPoint] = []
     static var refreshBufferLiving : [CGPoint] = []
     static var refreshBufferWashroom : [CGPoint] = []
     
     //Saving State of Each Button
-    static var Settings : [String : [ String : Bool]] = ["Rooms" : ["living" : false, "drawing" : false, "washroom" : false, "kitchen" : false], "Individual" : ["AC": false, "Lights": false, "Fans" : false, "Sensors":false]]
+    static var Settings : [String : [ String : Bool]] = ["Rooms" : ["living" : false, "washroom" : false, "kitchen" : false, "security" : false], "Individual" : ["AC": false, "Lights": false, "Fans" : false, "Sensors":false]]
     static var dummyFloat : Float = 0
     static var LivingRoom : [String : Any]! = ["ACState" : false, "ACVal" : Float(0), "Lights" : false, "Fans":false]
-    static var DrawingRoom : [String : Any]! = ["ACState" : false, "ACVal" : Float(0), "Lights" : false, "Fans":false]
     static var Kitchen : [String : Any]! = ["ChimneyState" : false, "ChimneyVal" : Float(0), "Lights" : false]
     static var Washroom : [String : Bool]! = ["Lights":false, "Shower" : false]
-    static var SettingsWriteBack : [String : [ String : Bool]] = ["Rooms" : ["living" : false, "drawing" : false, "washroom" : false, "kitchen" : false], "Individual" : ["AC": false, "Lights": false, "Fans" : false, "Sensors":false]]
+    static var Security : [String : Bool]! = ["Fire": false, "Bulgar" : false]
+    static var SettingsWriteBack : [String : [ String : Bool]] = ["Rooms" : ["living" : false, "security" : false, "washroom" : false, "kitchen" : false], "Individual" : ["AC": false, "Lights": false, "Fans" : false, "Sensors":false]]
     
     
     init(){
@@ -35,12 +34,6 @@ class MainLogicClass{
             print(val)
             for itr in 0...6{
                 MainLogicClass.refreshBufferLiving.append(CGPoint(x: val[itr][0], y: val[itr][1]))
-            }
-        })
-        Storage.readRefreshBufferValues(of: "DrawingRoomLog", completion: { val in
-            print(val)
-            for itr in 0...6{
-                MainLogicClass.refreshBufferDrawing.append(CGPoint(x: val[itr][0], y: val[itr][1]))
             }
         })
         Storage.readRefreshBufferValues(of: "WashroomLog", completion: { val in
@@ -66,12 +59,7 @@ class MainLogicClass{
                 MainLogicClass.refreshBufferLiving.append(CGPoint(x: val[itr][0], y: val[itr][1]))
             }
         })
-        Storage.readRefreshBufferValues(of: "DrawingRoomLog", completion: { val in
-            print(val)
-            for itr in 0...6{
-                MainLogicClass.refreshBufferDrawing.append(CGPoint(x: val[itr][0], y: val[itr][1]))
-            }
-        })
+        
         Storage.readRefreshBufferValues(of: "WashroomLog", completion: { val in
             print(val)
             for itr in 0...6{
@@ -111,10 +99,7 @@ class MainLogicClass{
             print(val)
             MainLogicClass.Settings["Rooms"]!["living"] = val
         })
-        Storage.readBools(of: "DrawingRoom", completion: {val in
-            print(val)
-            MainLogicClass.Settings["Rooms"]!["drawing"] = val
-        })
+        
         Storage.readBools(of: "Kitchen", completion: {val in
             print(val)
             MainLogicClass.Settings["Rooms"]!["kitchen"] = val
@@ -122,6 +107,10 @@ class MainLogicClass{
         Storage.readBools(of: "Washroom", completion: {val in
             print(val)
             MainLogicClass.Settings["Rooms"]!["washroom"] = val
+        })
+        Storage.readBools(of: "Security", completion: {val in
+            MainLogicClass.Settings["Rooms"]!["security"] = val
+            
         })
     }
     
@@ -151,34 +140,16 @@ class MainLogicClass{
             }
         })
     }
-    
-    
-    static func refreshDrawingRoom(){
+    static func refreshSecurity(){
         MainLogicClass.refreshSettings()
-        Storage.readSliderValues(of: "DrawingRoomAC", completion: { val in
-            MainLogicClass.DrawingRoom["ACVal"] = val
+        Storage.readBools(of: "SecurityFire", completion: {val in
+            MainLogicClass.Security["Fire"]! = val
         })
-        Storage.readBools(of: "DrawingRoomACBool", completion: {
-            val in
-            MainLogicClass.DrawingRoom["ACState"] = val && MainLogicClass.Settings["Individual"]!["AC"]!
-        })
-        Storage.readBools(of: "DrawingRoomLight", completion: {
-            val in
-            MainLogicClass.DrawingRoom["Lights"] = val && MainLogicClass.Settings["Individual"]!["Lights"]!
-        })
-        Storage.readBools(of: "DrawingRoomFan", completion: {
-            val in
-            MainLogicClass.DrawingRoom["Fans"] = val && MainLogicClass.Settings["Individual"]!["Fans"]!
-        })
-       
-        Storage.readRefreshBufferValues(of: "DrawingRoomLog", completion: { val in
-            MainLogicClass.refreshBufferDrawing = []
-            print(val)
-            for itr in 0...6{
-                MainLogicClass.refreshBufferDrawing.append(CGPoint(x: val[itr][0], y: val[itr][1]))
-            }
+        Storage.readBools(of: "SecurityBulgar", completion: { val in
+            MainLogicClass.Security["Bulgar"]! = val
         })
     }
+    
     
     static func refreshKitchen(){
         MainLogicClass.refreshSettings()
@@ -227,9 +198,9 @@ class MainLogicClass{
     static func writeDataSettings(){
         
         Storage.setBoolValues(of: "LivingRoom", with:MainLogicClass.SettingsWriteBack["Rooms"]!["living"]!, completion: {})
-        Storage.setBoolValues(of: "DrawingRoom", with:MainLogicClass.SettingsWriteBack["Rooms"]!["drawing"]!, completion: {})
         Storage.setBoolValues(of: "Kitchen", with:MainLogicClass.SettingsWriteBack["Rooms"]!["kitchen"]!, completion: {})
         Storage.setBoolValues(of: "Washroom", with:MainLogicClass.SettingsWriteBack["Rooms"]!["washroom"]!, completion: {})
+        Storage.setBoolValues(of: "Security", with:MainLogicClass.SettingsWriteBack["Rooms"]!["security"]!, completion: {})
         Storage.setBoolValues(of: "LigthsBool", with:MainLogicClass.SettingsWriteBack["Individual"]!["Lights"]!, completion: {})
         Storage.setBoolValues(of: "FansBool", with:MainLogicClass.SettingsWriteBack["Individual"]!["Fans"]!, completion: {})
         Storage.setBoolValues(of: "ACBool", with:MainLogicClass.SettingsWriteBack["Individual"]!["AC"]!, completion: {})
@@ -242,7 +213,9 @@ class MainLogicClass{
         MainLogicClass.refreshBuffersAll()
         
     }
-    
+    static func backgroundAppRefresh(){
+        print("BackGround App refrshed")
+    }
     
     
     

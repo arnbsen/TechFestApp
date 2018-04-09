@@ -18,10 +18,10 @@
 		4B12C90D20752C96002D52FB /* TechFestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B12C90C20752C96002D52FB /* TechFestAppTests.swift */; };
 		4B12C91820752C96002D52FB /* TechFestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B12C91720752C96002D52FB /* TechFestAppUITests.swift */; };
 		4B2F54822075524C008043AB /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B2F54812075524C008043AB /* Graph.swift */; };
+		4B431A01207BB945002EF64C /* SecurityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B431A00207BB945002EF64C /* SecurityViewController.swift */; };
 		4B7DD6B9207915C000E6FB96 /* MainLogicClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B7DD6B8207915C000E6FB96 /* MainLogicClass.swift */; };
 		4BAFB51E207A7DDD0054E09A /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAFB51D207A7DDD0054E09A /* AboutViewController.swift */; };
 		4BE7330B207895880050470A /* LivingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7330A207895880050470A /* LivingRoomViewController.swift */; };
-		4BE7330D207895E70050470A /* DrawingRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7330C207895E60050470A /* DrawingRoomViewController.swift */; };
 		4BE7330F207895F80050470A /* KitchenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE7330E207895F80050470A /* KitchenViewController.swift */; };
 		4BE73311207896130050470A /* WashroomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE73310207896130050470A /* WashroomViewController.swift */; };
 		4BE733132078AD500050470A /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE733122078AD500050470A /* Storage.swift */; };
@@ -67,10 +67,10 @@
 		4B12C91720752C96002D52FB /* TechFestAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechFestAppUITests.swift; sourceTree = "<group>"; };
 		4B12C91920752C96002D52FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B2F54812075524C008043AB /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		4B431A00207BB945002EF64C /* SecurityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityViewController.swift; sourceTree = "<group>"; };
 		4B7DD6B8207915C000E6FB96 /* MainLogicClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogicClass.swift; sourceTree = "<group>"; };
 		4BAFB51D207A7DDD0054E09A /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4BE7330A207895880050470A /* LivingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivingRoomViewController.swift; sourceTree = "<group>"; };
-		4BE7330C207895E60050470A /* DrawingRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingRoomViewController.swift; sourceTree = "<group>"; };
 		4BE7330E207895F80050470A /* KitchenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitchenViewController.swift; sourceTree = "<group>"; };
 		4BE73310207896130050470A /* WashroomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WashroomViewController.swift; sourceTree = "<group>"; };
 		4BE733122078AD500050470A /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 				4BE73310207896130050470A /* WashroomViewController.swift */,
 				4B11BA7E2077C44400B26507 /* SettingsViewController.swift */,
 				4BE7330A207895880050470A /* LivingRoomViewController.swift */,
-				4BE7330C207895E60050470A /* DrawingRoomViewController.swift */,
+				4B431A00207BB945002EF64C /* SecurityViewController.swift */,
 				4BE7330E207895F80050470A /* KitchenViewController.swift */,
 				4BAFB51D207A7DDD0054E09A /* AboutViewController.swift */,
 				4BE733122078AD500050470A /* Storage.swift */,
@@ -418,9 +418,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BE7330D207895E70050470A /* DrawingRoomViewController.swift in Sources */,
 				4B2F54822075524C008043AB /* Graph.swift in Sources */,
 				4B12C8F720752C94002D52FB /* ViewController.swift in Sources */,
+				4B431A01207BB945002EF64C /* SecurityViewController.swift in Sources */,
 				4BAFB51E207A7DDD0054E09A /* AboutViewController.swift in Sources */,
 				4BE73311207896130050470A /* WashroomViewController.swift in Sources */,
 				4B7DD6B9207915C000E6FB96 /* MainLogicClass.swift in Sources */,
@@ -613,7 +613,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arnabsen.TechFestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -632,7 +632,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.arnabsen.TechFestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

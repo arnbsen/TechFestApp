@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     static var isIntialised : Bool = false
     var mainVar : MainLogicClass?
     
-    
     @IBAction func openSettings(_ sender: UIBarButtonItem) {
         MainLogicClass.refreshSettings()
         self.performSegue(withIdentifier: "SettingPage", sender:self)
@@ -31,11 +30,12 @@ class ViewController: UIViewController {
          self.performSegue(withIdentifier: "LivingRoomPage", sender:self)
     }
     
-    @IBAction func openDrawingRoom(_ sender: UIButton) {
+    @IBAction func openSecurity(_ sender: UIButton) {
         MainLogicClass.refreshSettings()
-        MainLogicClass.refreshDrawingRoom()
-        self.performSegue(withIdentifier: "DrawingRoomPage", sender:self)
+        MainLogicClass.refreshSecurity()
+         self.performSegue(withIdentifier: "MainToSecurity", sender:self)
     }
+    
     
     @IBAction func openWashroom(_ sender: UIButton) {
         MainLogicClass.refreshSettings()
@@ -57,9 +57,17 @@ class ViewController: UIViewController {
             mainVar = MainLogicClass()
             
         }
+        MainLogicClass.refreshSettings()
+        MainLogicClass.refreshSettings()
             
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        MainLogicClass.refreshSettings()
+        MainLogicClass.refreshSecurity()
+        
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
