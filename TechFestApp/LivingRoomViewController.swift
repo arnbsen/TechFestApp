@@ -20,6 +20,7 @@ class LivingRoomViewController : UIViewController{
     @IBOutlet weak var ACVal: UILabel!
     @IBOutlet weak var lightsSwitch: UISwitch!
     @IBOutlet weak var fanSwitch: UISwitch!
+    @IBOutlet weak var powerLabel: UILabel!
     
     @IBAction func backToMain(_ sender: UIBarButtonItem) {
          self.performSegue(withIdentifier: "LivingRoomPageMain", sender:self)

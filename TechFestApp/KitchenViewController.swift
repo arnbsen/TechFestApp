@@ -20,6 +20,7 @@ class KitchenViewController : UIViewController{
     @IBOutlet weak var chimmeySlider: UISlider!
     @IBOutlet weak var chimneyLabel: UILabel!
     @IBOutlet weak var activeLabel: UILabel!
+    @IBOutlet weak var powerLabel: UILabel!
     
     @IBAction func backToMain(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "KitchenPageMain", sender:self)

@@ -175,6 +175,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="globalPower" destination="gYK-Ja-zek" id="Itu-Is-bW7"/>
+                        <outlet property="kitchenPower" destination="lxe-EJ-uXZ" id="vEQ-GV-B0c"/>
+                        <outlet property="powerLiving" destination="h9d-bu-r1r" id="jk7-Uw-C5G"/>
+                        <outlet property="powerWashroom" destination="3eq-5b-RNc" id="RJD-cy-TWI"/>
                         <segue destination="JsA-2i-3jC" kind="show" identifier="SettingPage" id="Bae-Qq-4Ll"/>
                         <segue destination="o2U-Hp-u9K" kind="show" identifier="LivingRoomPage" id="kjd-51-xDV"/>
                         <segue destination="Yh0-TG-ZwC" kind="show" identifier="WashroomPage" id="PLw-Yg-bay"/>
@@ -758,6 +762,7 @@
                         <outlet property="fanSwitch" destination="wMw-Fk-XmN" id="JfU-r2-jrY"/>
                         <outlet property="lightsSwitch" destination="Njo-ax-7Mc" id="WAg-Xm-O8M"/>
                         <outlet property="livingRoomActivity" destination="F7l-cZ-qRf" id="94g-GQ-uHu"/>
+                        <outlet property="powerLabel" destination="a8E-mr-Vgd" id="CdG-VO-auo"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="LivingRoomPageMain" id="WmT-UO-aCw"/>
                         <segue destination="JsA-2i-3jC" kind="show" identifier="LivingtoSettings" id="cP4-Zg-9H9"/>
                     </connections>
@@ -1128,6 +1133,7 @@
                     <connections>
                         <outlet property="activeLabel" destination="E5p-TU-1pz" id="5Pw-Lc-e4D"/>
                         <outlet property="lightsSwitch" destination="TGr-uj-Rts" id="oIb-O5-jch"/>
+                        <outlet property="powerLabel" destination="vcs-s9-0GT" id="5p1-X2-45P"/>
                         <outlet property="showerSwitch" destination="HUt-OO-6Hn" id="oDq-MB-LtA"/>
                         <outlet property="washroomActivity" destination="8LO-gf-gUH" id="9DW-aM-GsQ"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="WashroomPageMain" id="iQH-Mg-dnq"/>
@@ -1311,6 +1317,7 @@
                         <outlet property="chimmeytoggle" destination="zbO-2O-uoy" id="Kdo-xU-9u6"/>
                         <outlet property="chimneyLabel" destination="CEx-lu-IDe" id="WxO-Tc-kFH"/>
                         <outlet property="lightToggle" destination="DE5-ai-Deo" id="b4D-Tj-J5e"/>
+                        <outlet property="powerLabel" destination="5Yj-g5-WPl" id="RyY-CY-d23"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="KitchenPageMain" id="lV3-fW-YP4"/>
                         <segue destination="JsA-2i-3jC" kind="show" identifier="KitchentoSettings" id="nWh-Sd-yob"/>
                     </connections>
@@ -1329,6 +1336,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eZb-W8-eZH"/>
-        <segue reference="lJe-UW-RAM"/>
+        <segue reference="iQH-Mg-dnq"/>
     </inferredMetricsTieBreakers>
 </document>

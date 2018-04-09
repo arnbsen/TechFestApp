@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     static var isIntialised : Bool = false
     var mainVar : MainLogicClass?
     
+    @IBOutlet weak var globalPower: UILabel!
+    @IBOutlet weak var powerLiving: UILabel!
+    @IBOutlet weak var powerWashroom: UILabel!
+    @IBOutlet weak var kitchenPower: UILabel!
     @IBAction func openSettings(_ sender: UIBarButtonItem) {
         MainLogicClass.refreshSettings()
         self.performSegue(withIdentifier: "SettingPage", sender:self)
@@ -65,7 +69,10 @@ class ViewController: UIViewController {
         super.viewWillAppear(true)
         MainLogicClass.refreshSettings()
         MainLogicClass.refreshSecurity()
-        
+        globalPower.text = "Power: 110 W"
+        powerLiving.text = "Power: 70 W"
+        kitchenPower.text = "Power: 30 W"
+        powerWashroom.text = "Power: 10 W"
         
     }
     override func didReceiveMemoryWarning() {

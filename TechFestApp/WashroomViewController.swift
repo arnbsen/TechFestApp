@@ -16,7 +16,7 @@ class WashroomViewController : UIViewController{
     @IBOutlet weak var showerSwitch: UISwitch!
     @IBOutlet weak var lightsSwitch: UISwitch!
     @IBOutlet weak var activeLabel: UILabel!
-    
+    @IBOutlet weak var powerLabel: UILabel!
     
     @IBAction func backToMain(_ sender: UIBarButtonItem) {
         self.performSegue(withIdentifier: "WashroomPageMain", sender:self)
