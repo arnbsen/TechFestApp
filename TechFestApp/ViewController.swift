@@ -63,16 +63,32 @@ class ViewController: UIViewController {
         }
         MainLogicClass.refreshSettings()
         MainLogicClass.refreshSettings()
+        MainLogicClass.refreshPowerValues()
+      
+        globalPower.text = "Power: " + String(MainLogicClass.powerArray["global"]!) + " W"
+        powerLiving.text = "Power: " + String(MainLogicClass.powerArray["living"]!) + " W"
+        kitchenPower.text = "Power: " + String(MainLogicClass.powerArray["kitchen"]!) + " W"
+        powerWashroom.text = "Power: " + String(MainLogicClass.powerArray["washroom"]!) + " W"
             
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         MainLogicClass.refreshSettings()
         MainLogicClass.refreshSecurity()
-        globalPower.text = "Power: 110 W"
-        powerLiving.text = "Power: 70 W"
-        kitchenPower.text = "Power: 30 W"
-        powerWashroom.text = "Power: 10 W"
+        MainLogicClass.refreshPowerValues()
+        Storage.readSliderValues(of: "GlobalPower", completion: {val in
+            self.globalPower.text = "Power: " + String(val) + " W"
+        })
+        Storage.readSliderValues(of: "WashroomPower", completion: {val in
+            self.powerWashroom.text = "Power: " + String(val) + " W"
+        })
+        Storage.readSliderValues(of: "LivingRoomPower", completion: {val in
+            self.powerLiving.text = "Power: " + String(val) + " W"
+        })
+        Storage.readSliderValues(of: "KitchenPower", completion: {val in
+            self.kitchenPower.text = "Power: " + String(val) + " W"
+        })
+    
         
     }
     override func didReceiveMemoryWarning() {

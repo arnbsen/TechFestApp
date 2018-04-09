@@ -88,7 +88,8 @@ class LivingRoomViewController : UIViewController{
             activeLabel.textColor = #colorLiteral(red: 0.8352941176, green: 0.2078431373, blue: 0, alpha: 1)
             activeLabel.text = "Inactive"
         }
-        
+        powerLabel.text = "Power: " + String(MainLogicClass.powerArray["living"]!) + " W"
+    
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -106,6 +107,6 @@ class LivingRoomViewController : UIViewController{
         fanSwitch.setOn(MainLogicClass.LivingRoom["Fans"] as! Bool, animated: true)
         ACSlider.setValue(MainLogicClass.LivingRoom["ACVal"] as! Float, animated: true)
         ACVal.text = String(Int(ACSlider.value))
-        
+        powerLabel.text = "Power: " + String(MainLogicClass.powerArray["living"]!) + " W"
     }
 }

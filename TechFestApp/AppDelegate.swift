@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Storage.ref.keepSynced(true)
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
         MainLogicClass.refreshAll()
+        MainLogicClass.refreshPowerValues()
         return true
     
     }

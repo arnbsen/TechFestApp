@@ -52,7 +52,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="MzR-ZE-mCl"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -1335,7 +1335,7 @@
         <image name="kitchen_colour_cooking-02-512" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eZb-W8-eZH"/>
+        <segue reference="Bae-Qq-4Ll"/>
         <segue reference="iQH-Mg-dnq"/>
     </inferredMetricsTieBreakers>
 </document>

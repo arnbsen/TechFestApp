@@ -81,7 +81,7 @@ class KitchenViewController : UIViewController{
             activeLabel.textColor = #colorLiteral(red: 0.8352941176, green: 0.2078431373, blue: 0, alpha: 1)
             activeLabel.text = "Inactive"
         }
-        
+         powerLabel.text = "Power: " + String(MainLogicClass.powerArray["kitchen"]!) + " W"
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -98,6 +98,6 @@ class KitchenViewController : UIViewController{
         lightToggle.setOn(MainLogicClass.Kitchen["Lights"] as! Bool, animated: true)
         chimmeySlider.setValue(MainLogicClass.Kitchen["ChimneyVal"] as! Float, animated: true)
         chimneyLabel.text = String(Int(chimmeySlider.value))
-        
+         powerLabel.text = "Power: " + String(MainLogicClass.powerArray["kitchen"]!) + " W"
     }
 }

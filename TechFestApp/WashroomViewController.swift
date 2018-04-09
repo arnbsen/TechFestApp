@@ -71,6 +71,7 @@ class WashroomViewController : UIViewController{
         }
         lightsSwitch.setOn(MainLogicClass.Washroom["Lights"]!, animated: true)
         showerSwitch.setOn(MainLogicClass.Washroom["Shower"]!, animated: true)
+        powerLabel.text = "Power: " + String(MainLogicClass.powerArray["washroom"]!) + " W"
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +87,6 @@ class WashroomViewController : UIViewController{
         }
         lightsSwitch.setOn(MainLogicClass.Washroom["Lights"]!, animated: true)
         showerSwitch.setOn(MainLogicClass.Washroom["Shower"]!, animated: true)
-        
+        powerLabel.text = "Power: " + String(MainLogicClass.powerArray["washroom"]!) + " W"
     }
 }

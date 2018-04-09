@@ -27,7 +27,7 @@ class MainLogicClass{
     static var Washroom : [String : Bool]! = ["Lights":false, "Shower" : false]
     static var Security : [String : Bool]! = ["Fire": false, "Bulgar" : false]
     static var SettingsWriteBack : [String : [ String : Bool]] = ["Rooms" : ["living" : false, "security" : false, "washroom" : false, "kitchen" : false], "Individual" : ["AC": false, "Lights": false, "Fans" : false, "Sensors":false]]
-    
+    static var powerArray : [String : Int]! = ["living": 0, "washroom": 0, "kitchen":0, "global":0]
     
     init(){
         Storage.readRefreshBufferValues(of: "LivingRoomLog", completion: { val in
@@ -207,10 +207,24 @@ class MainLogicClass{
         Storage.setBoolValues(of: "SensorsBool", with:MainLogicClass.SettingsWriteBack["Individual"]!["Sensors"]!, completion: {})
         
     }
-    
+    static func refreshPowerValues(){
+        Storage.readSliderValues(of: "GlobalPower", completion: {val in
+            MainLogicClass.powerArray["global"]! = Int(val)
+        })
+        Storage.readSliderValues(of: "KitchenPower", completion: {val in
+            MainLogicClass.powerArray["kitchen"]! = Int(val)
+        })
+        Storage.readSliderValues(of: "LivingRoomPower", completion: {val in
+            MainLogicClass.powerArray["living"]! = Int(val)
+        })
+        Storage.readSliderValues(of: "WashroomPower", completion: {val in
+            MainLogicClass.powerArray["washroom"]! = Int(val)
+        })
+    }
     static func refreshAll(){
         MainLogicClass.refreshSettings()
         MainLogicClass.refreshBuffersAll()
+        MainLogicClass.refreshPowerValues()
         
     }
     static func backgroundAppRefresh(){
