@@ -18,6 +18,8 @@ class SecurityViewController : UIViewController{
     @IBOutlet weak var fireSwitch: UISwitch!
     @IBOutlet weak var bulgarAlarm: UISwitch!
     @IBOutlet weak var activityLabel: UILabel!
+    
+    
     @IBAction func fireAlarmToggle(_ sender: UISwitch) {
         fireSwitch.setOn(!fireSwitch.isOn, animated: true)
         self.didAnyoneChange = true

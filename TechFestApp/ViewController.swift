@@ -15,11 +15,13 @@ class ViewController: UIViewController {
     
     static var isIntialised : Bool = false
     var mainVar : MainLogicClass?
-    
+    @IBOutlet weak var MainActivity: Graph!
     @IBOutlet weak var globalPower: UILabel!
     @IBOutlet weak var powerLiving: UILabel!
     @IBOutlet weak var powerWashroom: UILabel!
     @IBOutlet weak var kitchenPower: UILabel!
+    
+    
     @IBAction func openSettings(_ sender: UIBarButtonItem) {
         MainLogicClass.refreshSettings()
         self.performSegue(withIdentifier: "SettingPage", sender:self)
@@ -76,6 +78,7 @@ class ViewController: UIViewController {
         MainLogicClass.refreshSettings()
         MainLogicClass.refreshSecurity()
         MainLogicClass.refreshPowerValues()
+       
         Storage.readSliderValues(of: "GlobalPower", completion: {val in
             self.globalPower.text = "Power: " + String(val) + " W"
         })
@@ -88,17 +91,39 @@ class ViewController: UIViewController {
         Storage.readSliderValues(of: "KitchenPower", completion: {val in
             self.kitchenPower.text = "Power: " + String(val) + " W"
         })
-    
-        
+         MainLogicClass.refreshView()
+        self.MainActivity.refresh(with: MainLogicClass.refreshBufferMain)
+        print("Hello")
+        print(MainLogicClass.refreshBufferMain)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-   
+   override func viewWillAppear(_ animated: Bool) {
+        MainLogicClass.refreshSettings()
+        MainLogicClass.refreshSecurity()
+        MainLogicClass.refreshPowerValues()
     
-
-
+        Storage.readSliderValues(of: "GlobalPower", completion: {val in
+            self.globalPower.text = "Power: " + String(val) + " W"
+        })
+        Storage.readSliderValues(of: "WashroomPower", completion: {val in
+            self.powerWashroom.text = "Power: " + String(val) + " W"
+        })
+        Storage.readSliderValues(of: "LivingRoomPower", completion: {val in
+            self.powerLiving.text = "Power: " + String(val) + " W"
+        })
+        Storage.readSliderValues(of: "KitchenPower", completion: {val in
+            self.kitchenPower.text = "Power: " + String(val) + " W"
+        })
+        MainLogicClass.refreshView()
+    
+        
+        
+        self.MainActivity.refresh(with: MainLogicClass.refreshBufferMain)
+    }
+    
 }
 
 

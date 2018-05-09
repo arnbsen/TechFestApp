@@ -17,8 +17,6 @@ class SettingsViewController : UIViewController{
     @IBOutlet weak var washroomSwitch: UISwitch!
     @IBOutlet weak var kitchenSwitch: UISwitch!
     @IBOutlet weak var lightSwitch: UISwitch!
-    @IBOutlet weak var ACSwitch: UISwitch!
-    @IBOutlet weak var fanSwitch: UISwitch!
     @IBOutlet weak var sensorSwitch: UISwitch!
     var livingRoom : Bool!
     @IBOutlet weak var securitySwitch: UISwitch!
@@ -105,36 +103,7 @@ class SettingsViewController : UIViewController{
         }
     }
     
-    @IBAction func fansToggle(_ sender: UISwitch) {
-        let alertWindow : UIAlertController = UIAlertController()
-        if !fanSwitch.isOn{
-            alertWindow.title =  "All Fans Controls"
-            alertWindow.message = "Turning of this toggle will disable all Fans. Do you wish to Continue?"
-            alertWindow.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{(action: UIAlertAction!) in
-                self.fanSwitch.setOn(true, animated: true)
-            }))
-            alertWindow.addAction(UIAlertAction(title: "Turn Off", style: .destructive, handler: {
-                (action : UIAlertAction) in
-                self.fanSwitch.setOn(false, animated: true)
-            }))
-            self.present(alertWindow, animated: true, completion: nil)
-        }
-    }
-    @IBAction func ACtoggle(_ sender: UISwitch) {
-        let alertWindow : UIAlertController = UIAlertController()
-        if !ACSwitch.isOn{
-            alertWindow.title =  "All AC Controls"
-            alertWindow.message = "Turning of this toggle will disable all ACs. Do you wish to Continue?"
-            alertWindow.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:{(action: UIAlertAction!) in
-                self.ACSwitch.setOn(true, animated: true)
-            }))
-            alertWindow.addAction(UIAlertAction(title: "Turn Off", style: .destructive, handler: {
-                (action : UIAlertAction) in
-                self.ACSwitch.setOn(false, animated: true)
-            }))
-            self.present(alertWindow, animated: true, completion: nil)
-        }
-    }
+    
     @IBAction func SensorsToggle(_ sender: UISwitch) {
         let alertWindow : UIAlertController = UIAlertController()
         if !sensorSwitch.isOn{
@@ -158,8 +127,6 @@ class SettingsViewController : UIViewController{
         MainLogicClass.SettingsWriteBack["Rooms"]!["washroom"]! = washroomSwitch.isOn
         MainLogicClass.SettingsWriteBack["Rooms"]!["security"]! = securitySwitch.isOn
         MainLogicClass.SettingsWriteBack["Individual"]!["Lights"]! = lightSwitch.isOn
-        MainLogicClass.SettingsWriteBack["Individual"]!["Fans"]! = fanSwitch.isOn
-        MainLogicClass.SettingsWriteBack["Individual"]!["AC"]! = ACSwitch.isOn
         MainLogicClass.SettingsWriteBack["Individual"]!["Sensors"]! = sensorSwitch.isOn
         MainLogicClass.writeDataSettings()
          self.performSegue(withIdentifier: "MainPage", sender:self)
@@ -172,8 +139,6 @@ class SettingsViewController : UIViewController{
         washroomSwitch.setOn(MainLogicClass.Settings["Rooms"]!["washroom"]!, animated: true)
         kitchenSwitch.setOn(MainLogicClass.Settings["Rooms"]!["kitchen"]!, animated: true)
         lightSwitch.setOn(MainLogicClass.Settings["Individual"]!["Lights"]!, animated: true)
-        ACSwitch.setOn(MainLogicClass.Settings["Individual"]!["AC"]!, animated: true)
-        fanSwitch.setOn(MainLogicClass.Settings["Individual"]!["Fans"]!, animated: true)
         sensorSwitch.setOn(MainLogicClass.Settings["Individual"]!["Sensors"]!, animated: true)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -182,10 +147,8 @@ class SettingsViewController : UIViewController{
         livingRoomSwitch.setOn(MainLogicClass.Settings["Rooms"]!["living"]!, animated: true)
         washroomSwitch.setOn(MainLogicClass.Settings["Rooms"]!["washroom"]!, animated: true)
         kitchenSwitch.setOn(MainLogicClass.Settings["Rooms"]!["kitchen"]!, animated: true)
-         securitySwitch.setOn(MainLogicClass.Settings["Rooms"]!["security"]!, animated: true)
+        securitySwitch.setOn(MainLogicClass.Settings["Rooms"]!["security"]!, animated: true)
         lightSwitch.setOn(MainLogicClass.Settings["Individual"]!["Lights"]!, animated: true)
-        ACSwitch.setOn(MainLogicClass.Settings["Individual"]!["AC"]!, animated: true)
-        fanSwitch.setOn(MainLogicClass.Settings["Individual"]!["Fans"]!, animated: true)
         sensorSwitch.setOn(MainLogicClass.Settings["Individual"]!["Sensors"]!, animated: true)
     }
     

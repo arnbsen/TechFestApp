@@ -18,11 +18,12 @@ class MainLogicClass{
     static var refreshBufferKitchen : [CGPoint] = []
     static var refreshBufferLiving : [CGPoint] = []
     static var refreshBufferWashroom : [CGPoint] = []
-    
+    static var y : [[Int]] = [[0,0,0,0,0,0,0], [0,0,0,0,0,0,0], [0,0,0,0,0,0,0]]
+    static var x : [Int] = [0,0,0,0,0,0,0]
     //Saving State of Each Button
     static var Settings : [String : [ String : Bool]] = ["Rooms" : ["living" : false, "washroom" : false, "kitchen" : false, "security" : false], "Individual" : ["AC": false, "Lights": false, "Fans" : false, "Sensors":false]]
     static var dummyFloat : Float = 0
-    static var LivingRoom : [String : Any]! = ["ACState" : false, "ACVal" : Float(0), "Lights" : false, "Fans":false]
+    static var LivingRoom : [String : Any]! = ["ACState" : false, "ACVal" : Float(0), "Lights" : false, "Curtains":false]
     static var Kitchen : [String : Any]! = ["ChimneyState" : false, "ChimneyVal" : Float(0), "Lights" : false]
     static var Washroom : [String : Bool]! = ["Lights":false, "Shower" : false]
     static var Security : [String : Bool]! = ["Fire": false, "Bulgar" : false]
@@ -33,30 +34,43 @@ class MainLogicClass{
         Storage.readRefreshBufferValues(of: "LivingRoomLog", completion: { val in
             print(val)
             for itr in 0...6{
-                MainLogicClass.refreshBufferLiving.append(CGPoint(x: val[itr][0], y: val[itr][1]))
+                MainLogicClass.refreshBufferLiving.append(CGPoint(x: val[itr][0], y: (val[itr][1] + 65)))
+                MainLogicClass.x[itr] = val[itr][0]
+                MainLogicClass.y[0][itr] += val[itr][1] + 65
             }
         })
         Storage.readRefreshBufferValues(of: "WashroomLog", completion: { val in
             print(val)
             for itr in 0...6{
-                MainLogicClass.refreshBufferWashroom.append(CGPoint(x: val[itr][0], y: val[itr][1]))
+                MainLogicClass.refreshBufferWashroom.append(CGPoint(x: val[itr][0], y: val[itr][1] + 65))
+                MainLogicClass.x[itr] = val[itr][0]
+                MainLogicClass.y[1][itr] += val[itr][1] + 65
             }
         })
         Storage.readRefreshBufferValues(of: "KitchenLog", completion: { val in
             print(val)
             for itr in 0...6{
-                MainLogicClass.refreshBufferKitchen.append(CGPoint(x: val[itr][0], y: val[itr][1]))
+                MainLogicClass.refreshBufferKitchen.append(CGPoint(x: val[itr][0], y: val[itr][1] + 65))
+                MainLogicClass.x[itr] = val[itr][0]
+                MainLogicClass.y[2][itr] += val[itr][1] + 65
+                
             }
         })
-        
-        
+        Storage.readRefreshBufferValues(of: "HumidityLog", completion: {val in
+            print(val)
+            for itr in 0...6{
+                MainLogicClass.refreshBufferMain.append(CGPoint(x: val[itr][0], y: val[itr][1]))
+            }
+        })
     }
     
     static func refreshBuffersAll(){
+       
         Storage.readRefreshBufferValues(of: "LivingRoomLog", completion: { val in
             print(val)
             for itr in 0...6{
                 MainLogicClass.refreshBufferLiving.append(CGPoint(x: val[itr][0], y: val[itr][1]))
+                
             }
         })
         
@@ -64,14 +78,22 @@ class MainLogicClass{
             print(val)
             for itr in 0...6{
                 MainLogicClass.refreshBufferWashroom.append(CGPoint(x: val[itr][0], y: val[itr][1]))
+               
             }
         })
         Storage.readRefreshBufferValues(of: "KitchenLog", completion: { val in
             print(val)
             for itr in 0...6{
                 MainLogicClass.refreshBufferKitchen.append(CGPoint(x: val[itr][0], y: val[itr][1]))
+                
             }
         })
+        Storage.readRefreshBufferValues(of: "HumidityLog", completion: {val in
+            for itr in 0...6{
+                MainLogicClass.refreshBufferMain.append(CGPoint(x: val[itr][0], y: val[itr][1]))
+            }
+        })
+       
         
     }
     static func refreshSettings(){
@@ -128,9 +150,9 @@ class MainLogicClass{
             val in
             MainLogicClass.LivingRoom["Lights"] = val && MainLogicClass.Settings["Individual"]!["Lights"]!
         })
-        Storage.readBools(of: "LivingRoomFan", completion: {
+        Storage.readBools(of: "Curtains", completion: {
             val in
-            MainLogicClass.LivingRoom["Fans"] = val && MainLogicClass.Settings["Individual"]!["Fans"]!
+            MainLogicClass.LivingRoom["Curtains"] = val
         })
         Storage.readRefreshBufferValues(of: "LivingRoomLog", completion: { val in
             MainLogicClass.refreshBufferLiving = []
@@ -201,7 +223,7 @@ class MainLogicClass{
         Storage.setBoolValues(of: "Kitchen", with:MainLogicClass.SettingsWriteBack["Rooms"]!["kitchen"]!, completion: {})
         Storage.setBoolValues(of: "Washroom", with:MainLogicClass.SettingsWriteBack["Rooms"]!["washroom"]!, completion: {})
         Storage.setBoolValues(of: "Security", with:MainLogicClass.SettingsWriteBack["Rooms"]!["security"]!, completion: {})
-        Storage.setBoolValues(of: "LigthsBool", with:MainLogicClass.SettingsWriteBack["Individual"]!["Lights"]!, completion: {})
+        Storage.setBoolValues(of: "LightsBool", with:MainLogicClass.SettingsWriteBack["Individual"]!["Lights"]!, completion: {})
         Storage.setBoolValues(of: "FansBool", with:MainLogicClass.SettingsWriteBack["Individual"]!["Fans"]!, completion: {})
         Storage.setBoolValues(of: "ACBool", with:MainLogicClass.SettingsWriteBack["Individual"]!["AC"]!, completion: {})
         Storage.setBoolValues(of: "SensorsBool", with:MainLogicClass.SettingsWriteBack["Individual"]!["Sensors"]!, completion: {})
@@ -226,6 +248,14 @@ class MainLogicClass{
         MainLogicClass.refreshBuffersAll()
         MainLogicClass.refreshPowerValues()
         
+    }
+    static func refreshView(){
+        //MainLogicClass.refreshBufferMain = []
+        Storage.readRefreshBufferValues(of: "HumidityLog", completion: {val in
+            for itr in 0...6{
+                MainLogicClass.refreshBufferMain.append(CGPoint(x: val[itr][0], y: val[itr][1]))
+            }
+        })
     }
     static func backgroundAppRefresh(){
         print("BackGround App refrshed")

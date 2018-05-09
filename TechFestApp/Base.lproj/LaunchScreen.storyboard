@@ -18,16 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Artboard 1-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jn3-3p-dmY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Artboard 1-2" highlightedImage="Artboard 1-2" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jn3-3p-dmY">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Jn3-3p-dmY" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Rt3-NU-xzr"/>
-                            <constraint firstItem="Jn3-3p-dmY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="i4A-hr-Dhv"/>
-                            <constraint firstItem="Jn3-3p-dmY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="rGR-WN-4s8"/>
-                            <constraint firstItem="Jn3-3p-dmY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="v1M-FR-G7G"/>
+                            <constraint firstAttribute="trailing" secondItem="Jn3-3p-dmY" secondAttribute="trailing" id="LPl-iz-izs"/>
+                            <constraint firstItem="Jn3-3p-dmY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="bmA-iA-UKd"/>
+                            <constraint firstItem="Jn3-3p-dmY" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="gZH-RO-ZDV"/>
+                            <constraint firstItem="Jn3-3p-dmY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="zSd-JA-4sT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Artboard 1-1" width="750" height="1334"/>
+        <image name="Artboard 1-2" width="750" height="1334"/>
     </resources>
 </document>

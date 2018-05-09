@@ -30,7 +30,7 @@ class LivingRoomViewController : UIViewController{
         if didAnyoneChange{
             if MainLogicClass.Settings["Rooms"]!["living"]! {
                 Storage.setBoolValues(of: "LivingRoomACBool", with: ACSwitch.isOn, completion: {})
-                Storage.setBoolValues(of: "LivingRoomFan", with: fanSwitch.isOn, completion: {})
+                Storage.setBoolValues(of: "Curtains", with: fanSwitch.isOn, completion: {})
                 Storage.setBoolValues(of: "LivingRoomLight", with: lightsSwitch.isOn, completion: {})
                 Storage.setSliderValues(of: "LivingRoomAC", with: ACSlider.value, completion: {})
                 self.performSegue(withIdentifier: "LivingRoomPageMain", sender:self)
@@ -104,7 +104,7 @@ class LivingRoomViewController : UIViewController{
         }
         ACSwitch.setOn(MainLogicClass.LivingRoom["ACState"] as! Bool , animated: true)
         lightsSwitch.setOn(MainLogicClass.LivingRoom["Lights"] as! Bool, animated: true)
-        fanSwitch.setOn(MainLogicClass.LivingRoom["Fans"] as! Bool, animated: true)
+        fanSwitch.setOn(MainLogicClass.LivingRoom["Curtains"] as! Bool, animated: true)
         ACSlider.setValue(MainLogicClass.LivingRoom["ACVal"] as! Float, animated: true)
         ACVal.text = String(Int(ACSlider.value))
         powerLabel.text = "Power: " + String(MainLogicClass.powerArray["living"]!) + " W"

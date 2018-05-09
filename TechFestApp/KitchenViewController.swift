@@ -17,8 +17,8 @@ class KitchenViewController : UIViewController{
     @IBOutlet weak var ActivityKitchen: Graph!
     @IBOutlet weak var chimmeytoggle: UISwitch!
     @IBOutlet weak var lightToggle: UISwitch!
-    @IBOutlet weak var chimmeySlider: UISlider!
-    @IBOutlet weak var chimneyLabel: UILabel!
+   
+    
     @IBOutlet weak var activeLabel: UILabel!
     @IBOutlet weak var powerLabel: UILabel!
     
@@ -29,7 +29,7 @@ class KitchenViewController : UIViewController{
     @IBAction func openMain(_ sender: UIBarButtonItem) {
         if didAnyoneChange{
             if MainLogicClass.Settings["Rooms"]!["kitchen"]!{
-                Storage.setSliderValues(of: "ChimneySpeed", with: chimmeySlider.value, completion: {})
+                
                 Storage.setBoolValues(of: "ChimneyBool", with: chimmeytoggle.isOn, completion: {})
                 Storage.setBoolValues(of: "KitchenLightsBool", with: lightToggle.isOn, completion: {})
                 self.performSegue(withIdentifier: "KitchenPageMain", sender:self)
@@ -43,8 +43,6 @@ class KitchenViewController : UIViewController{
                 alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {(UIAlertAction) in
                     self.chimmeytoggle.setOn(MainLogicClass.Kitchen["ChimneyState"] as! Bool , animated: true)
                     self.lightToggle.setOn(MainLogicClass.Kitchen["Lights"] as! Bool, animated: true)
-                    self.chimmeySlider.setValue(MainLogicClass.Kitchen["ChimneyVal"] as! Float, animated: true)
-                    self.chimneyLabel.text = String(Int(self.chimmeySlider.value))
                     self.didAnyoneChange = false
                 }))
                 self.present(alert, animated: true, completion: {})
@@ -59,10 +57,7 @@ class KitchenViewController : UIViewController{
         didAnyoneChange = true
     }
     
-    @IBAction func chimneySlider(_ sender: UISlider) {
-         chimneyLabel.text = String(Int(chimmeySlider.value))
-        didAnyoneChange = true
-    }
+    
     @IBAction func lightToggle(_ sender: UISwitch) {
         lightToggle.setOn(!lightToggle.isOn, animated: true)
         didAnyoneChange = true
@@ -71,8 +66,6 @@ class KitchenViewController : UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.ActivityKitchen.refresh(with: MainLogicClass.refreshBufferKitchen)
-        chimmeySlider.maximumValue = 100
-        chimmeySlider.minimumValue = 0
         MainLogicClass.refreshLivingRoom()
         if MainLogicClass.Settings["Rooms"]!["kitchen"]! {
             activeLabel.text = "Active"
@@ -96,8 +89,6 @@ class KitchenViewController : UIViewController{
         }
         chimmeytoggle.setOn(MainLogicClass.Kitchen["ChimneyState"] as! Bool , animated: true)
         lightToggle.setOn(MainLogicClass.Kitchen["Lights"] as! Bool, animated: true)
-        chimmeySlider.setValue(MainLogicClass.Kitchen["ChimneyVal"] as! Float, animated: true)
-        chimneyLabel.text = String(Int(chimmeySlider.value))
-         powerLabel.text = "Power: " + String(MainLogicClass.powerArray["kitchen"]!) + " W"
+        powerLabel.text = "Power: " + String(MainLogicClass.powerArray["kitchen"]!) + " W"
     }
 }
